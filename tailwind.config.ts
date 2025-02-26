@@ -12,6 +12,10 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        sigmar: "var(--font-sigmar)",
+        noto: "var(--font-noto-sans-jp)",
+      },
     },
   },
   plugins: [],
