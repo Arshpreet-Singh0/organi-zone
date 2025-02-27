@@ -20,13 +20,13 @@ const HeroSection = () => {
           <div className="mt-6 flex space-x-4">
             <a
               href="#"
-              className="px-6 py-3 bg-[#FFD700] text-[#A73F3C] font-bold rounded-lg shadow-md hover:bg-yellow-400 transition transform hover:scale-105 hover:shadow-lg hover:shadow-orange-400/50 hover:shadow-yellow-400/50 duration-300"
+              className="px-6 py-3 bg-[#FFD700] text-[#A73F3C] font-bold rounded-lg shadow-md hover:bg-yellow-400 transition transform hover:scale-105 hover:shadow-lg hover:shadow-yellow-400/50 duration-300"
             >
               Order Now
             </a>
             <a
               href="#"
-              className="px-6 py-3 border-2 border-[#FFD700] text-[#FFD700] font-bold rounded-lg hover:bg-[#FFD700] hover:text-[#A73F3C] transition transform hover:scale-105 hover:shadow-lg hover:shadow-orange-400/50 hover:shadow-yellow-400/50 duration-300"
+              className="px-6 py-3 border-2 border-[#FFD700] text-[#FFD700] font-bold rounded-lg hover:bg-[#FFD700] hover:text-[#A73F3C] transition transform hover:scale-105 hover:shadow-lg hover:shadow-yellow-400/50 duration-300"
             >
               Learn More
             </a>
@@ -35,11 +35,11 @@ const HeroSection = () => {
 
         {/* Right Content (Image) */}
         <div className="w-1/2 flex justify-center items-center">
-          <img
+          <Image
             src="https://m.media-amazon.com/images/I/91-mH6FVnHL._AC_UF1000,1000_QL80_.jpg"
             width={300}
             height={300}
-            className="max-w-xs md:max-w-sm rounded-lg shadow-2xl transition-transform transform hover:scale-105 hover:shadow-lg hover:shadow-orange-400/50 hover:shadow-yellow-400/50 duration-300"
+            className="max-w-xs md:max-w-sm rounded-lg shadow-2xl transition-transform transform hover:scale-105 hover:shadow-lg hover:shadow-yellow-400/50 duration-300"
             alt="Shirataki Rice"
           />
         </div>

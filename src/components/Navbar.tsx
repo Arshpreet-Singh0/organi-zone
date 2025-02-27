@@ -1,10 +1,14 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { useState } from 'react';
+import Link from "next/link";
+import { useState } from "react";
+import { useSession, signOut } from "next-auth/react";
 
 export default function Navbar() {
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState("");
+  const { data: session, status } = useSession();
+
+  if (status === "loading") return <p>Loading...</p>;
 
   return (
     <div>
@@ -31,14 +35,34 @@ export default function Navbar() {
 
           {/* Navigation Links */}
           <ul className="hidden md:flex space-x-8 text-gray-700 font-bold text-xl">
-            <li><Link href="#" className="text-[#a73f3c] hover:text-[#e6c200]">Dashboard</Link></li>
-            <li><Link href="#" className="hover:text-[#e6c200]">Search</Link></li>
-            <li><Link href="#" className="hover:text-[#e6c200]">Explore</Link></li>
-            <li><Link href="#" className="hover:text-[#e6c200]">About</Link></li>
-            <li><Link href="#" className="hover:text-[#e6c200]">Contact</Link></li>
+            <li>
+              <Link href="#" className="text-[#a73f3c] hover:text-[#e6c200]">
+                Dashboard
+              </Link>
+            </li>
+            <li>
+              <Link href="#" className="hover:text-[#e6c200]">
+                Search
+              </Link>
+            </li>
+            <li>
+              <Link href="#" className="hover:text-[#e6c200]">
+                Explore
+              </Link>
+            </li>
+            <li>
+              <Link href="#" className="hover:text-[#e6c200]">
+                About
+              </Link>
+            </li>
+            <li>
+              <Link href="#" className="hover:text-[#e6c200]">
+                Contact
+              </Link>
+            </li>
           </ul>
 
-          {/* Search Bar & Login Button */}
+          {/* Search Bar & Auth Section */}
           <div className="flex items-center space-x-6">
             {/* Search Input */}
             <div className="relative">
@@ -65,22 +89,44 @@ export default function Navbar() {
               </svg>
             </div>
 
-            {/* Login Button */}
-            <button className="px-6 py-3 bg-[#FFD700] hover:bg-[#e6c200] text-black font-bold rounded-xl flex items-center gap-3 text-lg">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                viewBox="0 0 20 20"
-                fill="currentColor"
+            {/* Authentication Section */}
+            {session ? (
+              <div className="flex items-center space-x-4">
+                {/* Profile Image */}
+
+                {/* User Name */}
+                <span className="font-bold text-gray-700">
+                  hey, {session.user?.name}
+                </span>
+                {/* Logout Button */}
+                <button
+                  onClick={() => signOut()}
+                  className="px-6 py-3 bg-red-500 hover:bg-red-700 text-white font-bold rounded-xl text-lg"
+                >
+                  Logout
+                </button>
+              </div>
+            ) : (
+              <Link
+                href={"/auth"}
+                // onClick={() => }
+                className="px-6 py-3 bg-[#FFD700] hover:bg-[#e6c200] text-black font-bold rounded-xl flex items-center gap-3 text-lg"
               >
-                <path
-                  fillRule="evenodd"
-                  d="M3 3a1 1 0 011 1v12a1 1 0 11-2 0V4a1 1 0 011-1zm7.707 3.293a1 1 0 010 1.414L9.414 9H17a1 1 0 110 2H9.414l1.293 1.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              <span>Login</span>
-            </button>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M3 3a1 1 0 011 1v12a1 1 0 11-2 0V4a1 1 0 011-1zm7.707 3.293a1 1 0 010 1.414L9.414 9H17a1 1 0 110 2H9.414l1.293 1.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                <span>Login</span>
+              </Link>
+            )}
           </div>
         </div>
       </nav>

@@ -40,10 +40,12 @@ export default function WhyChooseUs() {
             className={`p-6 bg-gray-100 rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-300 border-t-4 border-[#FFD700] text-center ${feature.shadowColor}`}
           >
             <div className="relative w-20 h-20 mx-auto mb-4">
-              <img
+              <Image
                 src={feature.imgSrc}
                 alt={feature.title}
                 className="transition-transform transform hover:scale-110"
+                width={100}
+                height={100}
               />
             </div>
             <h3 className="text-2xl font-semibold text-[#A73F3C]">

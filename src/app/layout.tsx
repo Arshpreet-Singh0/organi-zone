@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Sigmar, Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import { Providers } from "@/components/Providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,8 +42,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${sigmar.variable} ${notoSansJP.variable} antialiased`}
       >
+        <Providers>
         <Navbar />
         {children}
+        </Providers>
       </body>
     </html>
   );
