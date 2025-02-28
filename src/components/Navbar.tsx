@@ -3,14 +3,16 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useSession, signOut } from "next-auth/react";
+import SignInModal from "./Signin";
 
 export default function Navbar() {
   const [search, setSearch] = useState("");
   const { data: session, status } = useSession();
+  const [isOpen, setIsOpen ] = useState(false);
 
   if (status === "loading") return <p>Loading...</p>;
-
   return (
+    <>
     <div>
       {/* Navbar */}
       <nav className="bg-gray-100 w-full border-gray-100 shadow-lg shadow-gray-400 px-8 md:px-auto custom-font">
@@ -36,7 +38,7 @@ export default function Navbar() {
           {/* Navigation Links */}
           <ul className="hidden md:flex space-x-8 text-gray-700 font-bold text-xl">
             <li>
-              <Link href="#" className="text-[#a73f3c] hover:text-[#e6c200]">
+              <Link href="/" className="text-[#a73f3c] hover:text-[#e6c200]">
                 Dashboard
               </Link>
             </li>
@@ -107,9 +109,9 @@ export default function Navbar() {
                 </button>
               </div>
             ) : (
-              <Link
-                href={"/auth"}
-                // onClick={() => }
+              <button
+              
+                onClick={() => setIsOpen(true)}
                 className="px-6 py-3 bg-[#FFD700] hover:bg-[#e6c200] text-black font-bold rounded-xl flex items-center gap-3 text-lg"
               >
                 <svg
@@ -125,11 +127,16 @@ export default function Navbar() {
                   />
                 </svg>
                 <span>Login</span>
-              </Link>
+              </button>
             )}
           </div>
         </div>
       </nav>
     </div>
+      
+      {
+        isOpen && <SignInModal isOpen={isOpen} setIsOpen={setIsOpen}/>
+      }
+    </>
   );
 }
