@@ -36,11 +36,11 @@ export default function AdminNavbar() {
               Manage orders
             </Link>
           </li>
-          {/* <li>
-            <Link href="/admin/products" className="hover:text-[#e6c200]">
-              Manage Products
+          <li>
+            <Link href="/admin/newproduct" className="hover:text-[#e6c200]">
+              Add Products
             </Link>
-          </li> */}
+          </li>
           <li>
             <Link href="/admin/reports" className="hover:text-[#e6c200]">
               Create Account
@@ -50,7 +50,7 @@ export default function AdminNavbar() {
 
         {/* Logout Button */}
         <button
-          className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-700"
+          className="bg-[#A73F3C] text-white px-4 py-2 rounded-lg hover:bg-red-700"
           onClick={() => signOut()}
         >
           Logout

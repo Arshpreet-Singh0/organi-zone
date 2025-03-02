@@ -47,15 +47,6 @@ export default function RootLayout({
       >
           <Toaster
   richColors
-  toastOptions={{
-    style: {
-      backgroundColor: "#000",
-      color: "white",
-      borderRadius: "8px",
-      padding: "20px",
-
-    },
-  }}
 />
 
         <Providers>
