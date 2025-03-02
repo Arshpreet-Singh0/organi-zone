@@ -1,4 +1,4 @@
-import Signin from "@/components/Signin";
+import Signin from "@/components/auth/Signin";
 import { Suspense } from "react";
 
 const SigninPage = async () => {

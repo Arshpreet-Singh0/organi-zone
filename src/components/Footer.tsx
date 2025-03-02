@@ -46,7 +46,7 @@ const Footer = () => {
                 <ul className="list-unstyled">
                   <li><Link className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="/about">About Us</Link></li>
                   <li><Link className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="/blog">Blog</Link></li>
-                  <li><a className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://github.com/Arshpreet-Singh0/E-Commerce" target="_blank" rel="noopener noreferrer">Github</a></li>
+                  <li><Link className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="/admin/login">Admin Login</Link></li>
                   <li><Link className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="/free-products">Free Products</Link></li>
                 </ul>
               </div>

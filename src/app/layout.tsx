@@ -5,6 +5,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { Providers } from "@/components/Providers";
 import Footer from "@/components/Footer";
+import { Toaster } from "@/components/ui/sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,7 +30,7 @@ const notoSansJP = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  title: "organ-zone",
+  title: "organi-zone",
   description: "Sells Shirataki Rice at reasonable price",
 };
 
@@ -44,6 +45,19 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${sigmar.variable} ${notoSansJP.variable} antialiased`}
       >
+          <Toaster
+  richColors
+  toastOptions={{
+    style: {
+      backgroundColor: "#000",
+      color: "white",
+      borderRadius: "8px",
+      padding: "20px",
+
+    },
+  }}
+/>
+
         <Providers>
           <Navbar />
           {children}
