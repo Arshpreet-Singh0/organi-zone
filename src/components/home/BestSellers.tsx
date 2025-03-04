@@ -17,6 +17,8 @@ const getProducts = async () => {
 const BestSellers = async() => {
 
   const products = await getProducts();
+  console.log(products);
+  
 
   return (
     <section className="py-16 px-8 bg-gray-100 text-center m-10 rounded-lg w-full max-w-[1300px] mx-auto">
