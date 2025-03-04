@@ -2,6 +2,7 @@ import prisma from '@/db';
 import React from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import {Product} from "@prisma/client";
 import Image from 'next/image';
 
 const getProducts = async () => {
@@ -14,7 +15,7 @@ export default async function Page() {
   return (
     <div className="w-full min-h-screen bg-white py-10">
       <div className="w-[90%] max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {products.map((product) => (
+        {products.map((product : Product) => (
           <div key={product.id} className="bg-white shadow-lg rounded-lg overflow-hidden">
             {/* Product Image */}
             <div className="w-full h-48 flex justify-center items-center bg-gray-200">
