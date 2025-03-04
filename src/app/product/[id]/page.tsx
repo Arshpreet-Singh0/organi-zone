@@ -1,13 +1,13 @@
+import ProductDetails from "@/components/product/ProductDetails";
 import prisma from "@/db";
-import { Product } from '@prisma/client';
-import { ProductDetails } from '@/components/product/ProductDetails';
+import { Product } from "@prisma/client";
 
 const getProduct = async (id: number): Promise<Product | null> => {
   try {
     return await prisma.product.findUnique({
       where: {
-        id: Number(id)
-      }
+        id: Number(id),
+      },
     });
   } catch (error) {
     console.error("Error fetching product:", error);
@@ -15,14 +15,16 @@ const getProduct = async (id: number): Promise<Product | null> => {
   }
 };
 
-export default async function ProductPage({ params }: {
+export default async function ProductPage({
+  params,
+}: {
   params: Promise<{
-    id: number
-  }>
+    id: number;
+  }>;
 }) {
   const id = (await params).id;
   const product = await getProduct(id);
-
+  
   if (!product) {
     return (
       <div className="min-h-screen w-full bg-white py-10 flex items-center justify-center">
@@ -37,4 +39,3 @@ export default async function ProductPage({ params }: {
     </div>
   );
 }
-

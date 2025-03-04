@@ -1,45 +1,47 @@
+import prisma from "@/db";
 import Image from "next/image";
+import Link from "next/link";
+import { redirect } from "next/navigation";
 
-const BestSellers = () => {
-  const products = [
-    {
-      name: 'Shirataki Rice',
-      price: '$10.99',
-      image: 'https://m.media-amazon.com/images/I/91-mH6FVnHL._AC_UF1000,1000_QL80_.jpg',
-    },
-    {
-      name: 'Shirataki Rice',
-      price: '$10.99',
-      image: 'https://m.media-amazon.com/images/I/91-mH6FVnHL._AC_UF1000,1000_QL80_.jpg',
-    },
-    {
-      name: 'Shirataki Rice',
-      price: '$10.99',
-      image: 'https://m.media-amazon.com/images/I/91-mH6FVnHL._AC_UF1000,1000_QL80_.jpg',
-    },
-  ];
+const getProducts = async () => {
+  return await prisma.product.findMany({
+    select : {
+      id : true,
+      name : true,
+      price : true,
+      images : true
+    }
+  });
+};
+
+
+const BestSellers = async() => {
+
+  const products = await getProducts();
 
   return (
     <section className="py-16 px-8 bg-gray-100 text-center m-10 rounded-lg w-full max-w-[1300px] mx-auto">
       <h2 className="text-4xl text-gray-900 mb-8 custom-font">Top Picks for You</h2>
       <div className="grid md:grid-cols-3 gap-8">
-        {products.map((product, index) => (
+        {products.slice(0,3).map((product, index) => (
           <div
             key={index}
             className="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-300 border-t-4 border-[#FFD700] text-center hover:shadow-yellow-400/50"
           >
             <Image
-              src={product.image}
+              src={product?.images?.[0]}
               width={500}
               height={500}
               alt={product.name}
               className="w-full h-60 object-cover rounded-md hover:scale-110 transition-transform duration-300"
             />
             <h3 className="text-2xl font-semibold mt-4 text-gray-800">{product.name}</h3>
-            <p className="text-gray-700 text-lg font-medium mt-1">{product.price}</p>
-            <button className="mt-4 px-6 py-3 bg-[#FFD700] text-[#A73F3C] font-bold rounded-xl text-lg hover:bg-yellow-400 transition w-full shadow-md hover:shadow-lg">
+            <p className="text-gray-700 text-lg font-medium mt-1">₹{product.price}</p>
+            <Link href={`/product/${product?.id}`}>
+            <button className="mt-4 px-6 py-3 bg-[#FFD700] text-[#A73F3C] font-bold rounded-xl text-lg hover:bg-yellow-400 transition w-full shadow-md hover:shadow-lg" >
               Buy Now
             </button>
+            </Link>
           </div>
         ))}
       </div>
