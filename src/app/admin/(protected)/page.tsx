@@ -2,6 +2,7 @@ import prisma from '@/db';
 import React from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import Image from 'next/image';
 
 const getProducts = async () => {
   return await prisma.product.findMany({});
@@ -17,10 +18,12 @@ export default async function Page() {
           <div key={product.id} className="bg-white shadow-lg rounded-lg overflow-hidden">
             {/* Product Image */}
             <div className="w-full h-48 flex justify-center items-center bg-gray-200">
-              <img
+              <Image
                 src={product.images?.[0] || "/placeholder.jpg"}
                 alt={product.name}
                 className="object-cover h-full w-full"
+                width={100}
+                height={100}
               />
             </div>
 

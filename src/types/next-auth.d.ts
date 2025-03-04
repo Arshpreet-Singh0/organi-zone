@@ -1,4 +1,4 @@
-import NextAuth, { DefaultSession, DefaultUser } from "next-auth";
+import { DefaultUser } from "next-auth";
 
 // Extend the default User type to include `role`
 declare module "next-auth" {

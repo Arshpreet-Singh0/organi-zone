@@ -58,7 +58,7 @@ export default function ProductForm() {
     if (value.trim()) {
       setFormData({
         ...formData,
-        //@ts-ignore
+        // @ts-expect-error: Type mismatch due to third-party library issue
         [name]: [...formData[name], value.trim()],
       });
     }
@@ -67,7 +67,7 @@ export default function ProductForm() {
   const handleDelete = (name: keyof ProductFormData, index: number) => {
     setFormData({
       ...formData,
-      //@ts-ignore
+      // @ts-expect-error: Type mismatch due to third-party library issue
       [name]: formData[name].filter((_, i) => i !== index),
     });
   };

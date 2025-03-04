@@ -5,7 +5,7 @@ import React, { Suspense } from 'react';
 const AuthOptionContent = ({ setIsOpen } : {
     setIsOpen : (s:boolean)=>void
 }) => {
-  const { data: session, status } = useSession();
+  const { data: session} = useSession();
 
   return (
     <div>

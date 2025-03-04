@@ -18,7 +18,7 @@ export const authOptions: AuthOptions = {
         email: { label: "Email", type: "email", required: true },
         password: { label: "Password", type: "password", required: true },
       },
-      async authorize(credentials, req) {
+      async authorize(credentials) {
         if (!credentials?.email || !credentials?.password) {
           throw new Error("Missing email or password");
         }
@@ -61,7 +61,7 @@ export const authOptions: AuthOptions = {
     },
     async session({ session, token }) {
       if (session.user) {
-        // @ts-ignore
+        // @ts-expect-error: Type mismatch due to third-party library issue
         session.user.role = token.role;
       }
       return session;

@@ -9,30 +9,49 @@ const Footer = () => {
         <div className="flex flex-wrap text-left lg:text-left">
           <div className="w-full lg:w-6/12 px-4">
             <h4 className="text-3xl font-semibold text-blueGray-700">
-              Let's keep in touch!
+              <p className="text-3xl font-semibold text-blueGray-700">
+                Let&apos;s keep in touch!
+              </p>
             </h4>
             <h5 className="text-lg mt-0 mb-2 text-blueGray-600">
-              Find us on any of these platforms, we respond in 1-2 business days.
+              Find us on any of these platforms, we respond in 1-2 business
+              days.
             </h5>
             <div className="mt-6 lg:mb-0 mb-6 flex gap-2">
-              <a href="https://x.com/arshpreet_000" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://x.com/arshpreet_000"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <button className="bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 flex items-center justify-center rounded-full outline-none focus:outline-none">
-                  <Twitter size={20} className="text-[#A73F3C]"/>
+                  <Twitter size={20} className="text-[#A73F3C]" />
                 </button>
               </a>
-              <a href="https://www.linkedin.com/in/arshpreet-singh-2b30a7285/" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://www.linkedin.com/in/arshpreet-singh-2b30a7285/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <button className="bg-white text-lightBlue-600 shadow-lg font-normal h-10 w-10 flex items-center justify-center rounded-full outline-none focus:outline-none">
-                  <Linkedin size={20} className="text-[#A73F3C]"/>
+                  <Linkedin size={20} className="text-[#A73F3C]" />
                 </button>
               </a>
-              <a href="https://github.com/Arshpreet-Singh0" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://github.com/Arshpreet-Singh0"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <button className="bg-white text-blueGray-800 shadow-lg font-normal h-10 w-10 flex items-center justify-center rounded-full outline-none focus:outline-none">
-                  <Github size={20} className="text-[#A73F3C]"/>
+                  <Github size={20} className="text-[#A73F3C]" />
                 </button>
               </a>
-              <a href="https://www.instagram.com/organizone.shop/" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://www.instagram.com/organizone.shop/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <button className="bg-white text-blueGray-800 shadow-lg font-normal h-10 w-10 flex items-center justify-center rounded-full outline-none focus:outline-none">
-                  <InstagramIcon size={20} className="text-[#A73F3C]"/>
+                  <InstagramIcon size={20} className="text-[#A73F3C]" />
                 </button>
               </a>
             </div>
@@ -44,10 +63,38 @@ const Footer = () => {
                   Useful Links
                 </span>
                 <ul className="list-unstyled">
-                  <li><Link className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="/about">About Us</Link></li>
-                  <li><Link className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="/blog">Blog</Link></li>
-                  <li><Link className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="/admin/login">Admin Login</Link></li>
-                  <li><Link className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="/free-products">Free Products</Link></li>
+                  <li>
+                    <Link
+                      className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
+                      href="/about"
+                    >
+                      About Us
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
+                      href="/blog"
+                    >
+                      Blog
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
+                      href="/admin/login"
+                    >
+                      Admin Login
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
+                      href="/free-products"
+                    >
+                      Free Products
+                    </Link>
+                  </li>
                 </ul>
               </div>
               <div className="w-full lg:w-4/12 px-4">
@@ -55,10 +102,40 @@ const Footer = () => {
                   Other Resources
                 </span>
                 <ul className="list-unstyled">
-                  <li><a className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://github.com/creativetimofficial/notus-js/blob/main/LICENSE.md" target="_blank" rel="noopener noreferrer">MIT License</a></li>
-                  <li><Link className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="/terms">Terms &amp; Conditions</Link></li>
-                  <li><Link className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="/privacy">Privacy Policy</Link></li>
-                  <li><Link className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="/contact">Contact Us</Link></li>
+                  <li>
+                    <a
+                      className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
+                      href="https://github.com/creativetimofficial/notus-js/blob/main/LICENSE.md"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      MIT License
+                    </a>
+                  </li>
+                  <li>
+                    <Link
+                      className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
+                      href="/terms"
+                    >
+                      Terms &amp; Conditions
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
+                      href="/privacy"
+                    >
+                      Privacy Policy
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
+                      href="/contact"
+                    >
+                      Contact Us
+                    </Link>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -69,7 +146,16 @@ const Footer = () => {
           <div className="w-full md:w-4/12 px-4 mx-auto text-center">
             <div className="text-sm text-blueGray-500 font-semibold py-1">
               Copyright © <span id="get-current-year">2025</span>
-              <a href="https://github.com/Arshpreet-Singh0" className="text-blueGray-500 hover:text-gray-800" target="_blank" rel="noopener noreferrer"> Organi-Zone</a>.
+              <a
+                href="https://github.com/Arshpreet-Singh0"
+                className="text-blueGray-500 hover:text-gray-800"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {" "}
+                Organi-Zone
+              </a>
+              .
             </div>
           </div>
         </div>

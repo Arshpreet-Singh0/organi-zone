@@ -1,7 +1,6 @@
 import prisma from "@/db";
 import Image from "next/image";
 import Link from "next/link";
-import { redirect } from "next/navigation";
 
 const getProducts = async () => {
   return await prisma.product.findMany({
